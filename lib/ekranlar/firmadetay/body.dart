@@ -70,14 +70,40 @@ class Body extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Text(
-                            'Yorum Yap',
-                            style: TextStyle(
-                              color: firma.color,
-                              fontWeight: FontWeight.bold,
+                          new GestureDetector(
+                            child: new Text(
+                              'Yorum Yap',
+                              style: TextStyle(
+                                color: firma.color,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
+                            onDoubleTap: () {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                new SnackBar(
+                                  content: new Text('Çift Tıkladın!'),
+                                ),
+                              );
+                            },
                           ),
                         ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          color: Colors.blue,
+                          child: new GestureDetector(
+                            child: new Text('Çift Tıkla'),
+                            onTapUp: (e) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                new SnackBar(
+                                  content:
+                                      new Text(e.toString() + ' Tetik Var!'),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
                       ),
                       Padding(
                         padding:

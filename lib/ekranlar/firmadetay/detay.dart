@@ -1,3 +1,5 @@
+import 'package:bosna_mahallesi/ekranlar/login/body.dart';
+import 'package:bosna_mahallesi/ekranlar/login/kullanici_listele.dart';
 import 'package:bosna_mahallesi/firma.dart';
 import 'package:flutter/material.dart';
 
@@ -22,8 +24,26 @@ class DetayEkrani extends StatelessWidget {
       backgroundColor: firma.color,
       title: Text('Bosna Mahallesi'),
       actions: [
-        IconButton(icon: Icon(Icons.search), onPressed: () {}),
-        IconButton(icon: Icon(Icons.store), onPressed: () {}),
+        IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LoginListeEkrani(),
+                ),
+              );
+            }),
+        IconButton(
+            icon: Icon(Icons.store),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LoginEkrani(),
+                ),
+              );
+            }),
         SizedBox(width: kSabitPadding / 2),
       ],
     );
